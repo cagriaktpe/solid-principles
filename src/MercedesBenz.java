@@ -4,14 +4,8 @@ import Sms.SmsModel;
 import Sms.SmsSender;
 
 public class MercedesBenz extends BaseCar {
-
-    // properties
-    public void go() {
-        System.out.println("Car is going");
-    }
-
-    // methods
-    public void stop() {
-        System.out.println("Car is stopped");
+    @Override
+    public double getCostPerKM() {
+        return 1.5;
     }
 }

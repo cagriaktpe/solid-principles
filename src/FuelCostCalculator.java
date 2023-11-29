@@ -1,5 +1,5 @@
 public class FuelCostCalculator {
-    public double calculate(MercedesBenz car) {
-        return car.tripKM * 0.1;
+    public double calculate(BaseCar car) {
+        return car.getCostPerKM() * car.getTripKM();
     }
 }

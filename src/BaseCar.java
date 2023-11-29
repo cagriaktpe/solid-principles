@@ -5,6 +5,16 @@ import Sms.SmsSender;
 
 public abstract class BaseCar {
     public int tripKM;
+
+    public void go() {
+        System.out.println("Car is going");
+    }
+
+    public void stop() {
+        System.out.println("Car is stopped");
+    }
+
+    public abstract double getCostPerKM();
     public void sendTripInfoSMSToDriver(DriverInfo driver) {
         if (driver.emailAdress != null) {
             var message = "Your trip is " + tripKM + " km";
