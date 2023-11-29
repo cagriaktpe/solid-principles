@@ -1,11 +1,11 @@
 public class TripInfoLogger {
-    public void logToGermany(String tripInfo) {
-        GermanyLogger germanyLogger = new GermanyLogger();
-        germanyLogger.log(tripInfo);
+    private ILogger logger;
+
+    public TripInfoLogger(ILogger logger) {
+        this.logger = logger;
     }
 
-    public void logToLocalStorage(String tripInfo) {
-        LocalStorageLogger localStorageLogger = new LocalStorageLogger();
-        localStorageLogger.log(tripInfo);
+    public void log(String tripInfo) {
+        logger.log(tripInfo);
     }
 }

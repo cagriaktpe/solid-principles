@@ -15,9 +15,11 @@ public class TestClass {
             car.stop();
             car.sendTripInfoMailToDriver(new DriverInfo("John", "555-555-5555", "email@email.com"));
         } catch (EngineStartException e) {
-            new TripInfoLogger().logToGermany("Engine start failed");
+            new TripInfoLogger(new GermanyLogger()).log("Engine start failed");
         } catch (AirPressionException e) {
-            new TripInfoLogger().logToLocalStorage("Air pression failed");
+            new TripInfoLogger(new LocalStorageLogger()).log("Air pression failed");
+        } catch (Exception e) {
+            new TripInfoLogger(new LocalServerLogger()).log("Unknown error");
         }
     }
 }
