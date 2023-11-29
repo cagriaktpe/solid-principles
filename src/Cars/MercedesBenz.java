@@ -9,6 +9,8 @@ import Sms.ISMSSendable;
 import Sms.SmsModel;
 import Sms.SmsSender;
 
+import java.util.List;
+
 public class MercedesBenz extends BaseCar implements ISMSSendable, IEmailSendable {
     @Override
     public double getCostPerKM() {
