@@ -1,3 +1,5 @@
+package Driver;
+
 public class DriverInfo {
     public String fullName;
     public String phoneNumber;

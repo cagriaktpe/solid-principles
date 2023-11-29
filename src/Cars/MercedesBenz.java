@@ -1,20 +1,20 @@
-import Mail.MailModel;
+package Cars;
+
+import Cars.BaseCar;
+import Driver.DriverInfo;
+import Mail.EmailModel;
+import Mail.IEmailSendable;
 import Mail.MailSender;
+import Sms.ISMSSendable;
 import Sms.SmsModel;
 import Sms.SmsSender;
 
-public abstract class BaseCar {
-    public int tripKM;
-
-    public void go() {
-        System.out.println("Car is going");
+public class MercedesBenz extends BaseCar implements ISMSSendable, IEmailSendable {
+    @Override
+    public double getCostPerKM() {
+        return 1.5;
     }
 
-    public void stop() {
-        System.out.println("Car is stopped");
-    }
-
-    public abstract double getCostPerKM();
     public void sendTripInfoSMSToDriver(DriverInfo driver) {
         if (driver.emailAdress != null) {
             var message = "Your trip is " + tripKM + " km";
@@ -27,18 +27,9 @@ public abstract class BaseCar {
     public void sendTripInfoMailToDriver(DriverInfo driver) {
         if (driver.emailAdress != null) {
             var message = "Your trip is " + tripKM + " km";
-            var mail = new MailModel(driver.emailAdress, message, "now");
+            var mail = new EmailModel(driver.emailAdress, message, "now");
             var mailSender = new MailSender();
             mailSender.sendMail(mail);
         }
-    }
-
-    // getters and setters
-    public void setTripKM(int tripKM) {
-        this.tripKM = tripKM;
-    }
-
-    public int getTripKM() {
-        return tripKM;
     }
 }

@@ -1,3 +1,5 @@
+import Cars.MercedesBenz;
+
 public class TestClass {
     public void CalculateTripCost() {
         var calculator = new FuelCostCalculator();

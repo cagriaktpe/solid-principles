@@ -1,12 +1,12 @@
 package Mail;
 
-public class MailModel {
+public class EmailModel {
     public String mailAddress;
     public String mail;
 
     public String sendTime;
 
-    public MailModel(String mailAddress, String mail, String sendTime) {
+    public EmailModel(String mailAddress, String mail, String sendTime) {
         this.mailAddress = mailAddress;
         this.mail = mail;
         this.sendTime = sendTime;
